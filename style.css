@@ -1,0 +1,545 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --purple: #8b70d8;
+    --deep-purple: #55418c;
+    --lavender: #eee7ff;
+    --yellow: #fff0b8;
+    --mint: #d8f0df;
+    --text: #51496b;
+    --muted: #9992ae;
+    --white: #fffdfb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #f8f4ff;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.login-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding: 14px;
+    gap: 14px;
+}
+
+/* LEFT SIDE */
+
+.visual-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 650px;
+    overflow: hidden;
+    padding: 35px 38px;
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(77, 67, 145, 0.05),
+            rgba(83, 61, 130, 0.58)
+        ),
+        url("img/WhatsApp Image 2026-10-09 at 11.33.11.jpeg") center / cover no-repeat,
+        linear-gradient(145deg, #9c9af0, #f5cde7 55%, #d8f0df);
+        
+}
+
+.brand {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand b {
+    color: #fff0b8;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 37px;
+    height: 37px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 22px;
+}
+
+.visual-content {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+    margin-bottom: 48px;
+    color: white;
+}
+
+.small-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.visual-content h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(42px, 4.3vw, 64px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+}
+
+.visual-content h1 span {
+    color: var(--yellow);
+}
+
+.visual-content p {
+    margin-top: 17px;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.visual-footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+/* RIGHT SIDE */
+
+.form-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 65px 9% 45px;
+    overflow: hidden;
+    border-radius: 24px;
+    background:
+        radial-gradient(
+            ellipse at 95% 5%,
+            rgba(238, 225, 255, 0.8),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 0% 100%,
+            rgba(255, 240, 184, 0.4),
+            transparent 35%
+        ),
+        var(--white);
+}
+
+.form-panel::before,
+.form-panel::after {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(222, 243, 225, 0.35);
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+.form-panel::before {
+    top: -90px;
+    right: -50px;
+}
+
+.form-panel::after {
+    bottom: -100px;
+    left: -60px;
+    background: rgba(233, 222, 255, 0.5);
+}
+
+.form-top {
+    position: absolute;
+    top: 30px;
+    right: 7%;
+    left: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-label {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.top-link {
+    color: var(--purple);
+    font-size: 11px;
+}
+
+.login-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+}
+
+.mobile-brand {
+    display: none;
+}
+
+.welcome {
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.welcome span {
+    color: #d7a8c9;
+    font-size: 15px;
+}
+
+.heading h2 {
+    margin-top: 12px;
+    color: var(--deep-purple);
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(30px, 3vw, 39px);
+    font-weight: 900;
+    line-height: 1.17;
+    letter-spacing: -1px;
+}
+
+.heading p {
+    margin-top: 12px;
+    margin-bottom: 26px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.google-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid #d8cafa;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--deep-purple);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.google-button:hover {
+    background: #f4efff;
+    transform: translateY(-1px);
+}
+
+.google-logo {
+    color: #4285f4;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: #e6dff2;
+}
+
+.divider p {
+    color: var(--muted);
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.input-group input {
+    width: 100%;
+    height: 45px;
+    padding: 0 14px;
+    outline: none;
+    border: 1px solid #e2d9f6;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--text);
+    font-size: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input::placeholder {
+    color: #aaa3bd;
+}
+
+.input-group input:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(139, 112, 216, 0.12);
+}
+
+.password-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-label .forgot-link {
+    margin-bottom: 8px;
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin: 2px 0 20px;
+    color: #77708d;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.remember input {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--purple);
+}
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 47px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(110deg, #bca6f4, #987ce2);
+    box-shadow: 0 7px 18px rgba(160, 130, 220, 0.2);
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(160, 130, 220, 0.3);
+}
+
+.submit-button span:last-child {
+    font-size: 17px;
+}
+
+.register-text {
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+.register-text a {
+    color: var(--purple);
+    font-weight: 800;
+}
+
+.register-text a:hover,
+.forgot-link:hover,
+.top-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.form-footer {
+    position: absolute;
+    bottom: 22px;
+    z-index: 1;
+    color: #aaa2bc;
+    font-size: 10px;
+    text-align: center;
+}
+
+.form-footer span {
+    color: #d9a6cb;
+}
+
+/* TABLET */
+
+@media (max-width: 1023px) {
+    .login-page {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .visual-panel {
+        padding: 28px 25px;
+    }
+
+    .form-panel {
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+
+    .visual-content h1 {
+        font-size: 43px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+    .login-page {
+        display: block;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .visual-panel {
+        display: none;
+    }
+
+    .form-panel {
+        min-height: 100vh;
+        padding: 75px 24px 55px;
+        border-radius: 0;
+    }
+
+    .form-top {
+        top: 25px;
+        right: 24px;
+        left: 24px;
+    }
+
+    .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 38px;
+        color: var(--deep-purple);
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+    }
+
+    .mobile-brand b {
+        color: var(--purple);
+    }
+
+    .mobile-brand .brand-icon {
+        width: 34px;
+        height: 34px;
+        border-color: #dfd1fa;
+        background: var(--lavender);
+        color: var(--purple);
+    }
+
+    .heading h2 {
+        font-size: 34px;
+    }
+
+    .login-card {
+        max-width: 420px;
+    }
+
+    .form-footer {
+        bottom: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+    .form-panel {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .heading h2 {
+        font-size: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
